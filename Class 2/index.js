@@ -74,3 +74,24 @@ let newPrices = prices.forEach((price) => {
 });
 
 console.log(newPrices);
+
+const prices = [100, 200, 300, 400, 500];
+let newPrices = prices.forEach((price) => {
+    return price - price * 0.1;
+});
+
+console.log(newPrices);
+
+const prices = [100, 200, 300, 400, 500];
+let newPrices = prices.forEach((price) => {
+    return price - price * 0.1;
+});
+
+console.log(newPrices);
+
+const prices = [100, 200, 300, 400, 500];
+let newPrices = prices.forEach((price) => {
+    return price - price * 0.1;
+});
+
+console.log(newPrices);
