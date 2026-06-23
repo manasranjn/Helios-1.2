@@ -1,0 +1,85 @@
+#What is Backend Development?
+-It is the part of web development that focuses on creating and managing the server side ,database and APIs of an application.
+-It is the backbone that supports frontend handling, processing, storing and securing data that get displayed to the users.
+-It focuses on the server-side on an website or application handling the data logic and integration required to ensure smooth functionalities.
+
+#ROLE OF A BACKEND DEVELOPER:
+-Builds APIs ->Manage database ->Handle server-side logic
+
+#KEY COMPONENTS OF BACKEND DEVELOPEMENT:
+1.Database:
+-Use for storing and retrieving data
+
+2.Server
+-where codes run and request are processed
+
+3.API:
+-It allows communication between frontend and backend
+
+4.Programming languages:
+-Used to build the backend
+
+5.Authentication:
+
+#What are shell Commands?
+-Shell Commands are the instructions or inputs given to command line interpreter known as a shell to perform some specific tasks on a computer.
+-It is used to direct interact with the operating system through the terminal.
+-By using shell commands we can create folder, files, delete folders and files also we can copy files from one folder to another without using a mouse.
+
+Types of Shell:
+-There are four types of shell they are:
+1.bash(born again shell)
+2.zsh(z shell)
+3.Power Shell
+4.Fish (Friendly interactive shell)
+
+#Node.js:
+-It is a JavaScript run time environment that allows us to run JS code outside of a web browser.
+-It is an open source cross platform JavaScript run time environment that runs on chrome's v8 engine.
+-Node.js is known for its non-blocking I/o and event- driven architecture making it great for building scalable and high performance application.
+
+#Node.js Architecture:
+1.Event-Driven/Single-threaded:
+-It handles multiple connection using a single thread via the event loop and callback.
+
+2.Non blocking I/O:
+-Operation like reading files databases or network calls do not block execution.
+-Instead callback, promises, asyn-await handles complition.
+
+#Node REPL(read-evaluate-print-loop):
+-It is an interative shell in Node.js that allows to execute JavaScript code line by line and see immediate result.
+-It is useful for quick testing, debbuging and learning where JavaScript code can be experimented with directly.
+
+#How it works?
+1.Read- It takes the user input.
+2.Evaluate- It evaluate the code immediately in the same line.
+3.Print- It shows the output or result.
+4.Loop- It waits for the next input until the user exit.
+
+-To start Node repl open terminal or command promt then type node press enter.
+-To exit we can use .exit and to clear the environment .clear 
+
+#What are module in Node.js?
+-A module in Node.js is a self-contained unit of code placed in a file or folder, capable of exporting functionalities for use elsewhere.
+-Modules prevent global namespace pollution help organising code and improve maintainability.
+
+-There are 3 types of Modules:
+1.Built-in Modules- Included with Node.js
+2.Local modules- User defined or created by developers as a part of project
+3.External modules- Install via npm and stored in 'node_modules' folder
+
+#Module System in Node.js-
+-Node.js uses powerful module system to help organise code, promote, re-use and encapsulate functionalities of Node.js application structure.
+-There are two primary systems in node.js
+1.Common js Modules
+2.ES6/ECMA script modules
+
+1)Common js modules system:
+-It is a traditional module system in node.js
+-It uses require() method to import modules and "module.exports" or exports to export functionalities.
+-Each module or file is wrap in a function exposing module, export, required __filename, __directoryname for local scope ensuring variables do not leak into global scope.
+
+2)ES6/ECMA Script module system:
+-It is a modern standardised module utilising "import and export ".
+-Modules are loaded asynchronously for better performance.
+-We have to use "type":"module" in package.json to enable ES6. (if there is no package.json then use .mjs extension)
