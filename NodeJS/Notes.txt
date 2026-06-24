@@ -83,3 +83,110 @@ Types of Shell:
 -It is a modern standardised module utilising "import and export ".
 -Modules are loaded asynchronously for better performance.
 -We have to use "type":"module" in package.json to enable ES6. (if there is no package.json then use .mjs extension)
+
+Node.js path module :
+--The Node.js path module is a built in module used to work with files and directory across different operating system ,allowing seamless cross platform development and file manipulation task.
+--path module helps handle differences in path format between operating system
+--it is used for manipulating ,joining,resolving,and normalising path  in model  application
+
+Path Module: (method)
+-> path.resolve():- Resolves an absolute path from relative segments.
+-> path.basename():- Gets the last part of a path.
+-> path.dirname():- It return the directory name of a path.
+-> path.extname():- It returns the file extension.
+-> path.isAbsolute():- It checks path is absolute or not.
+
+--To use path module in Node.js, we have to import it .
+
+Node.js FileSystem(fs):
+--Node.js filesystem(fs) module enables file and directory I/O operations offering both sysnchronous and asynchronous methods to handle files efficiently in different scenario.
+
+Use of fs module :
+--The Node.js fs module is a core part of Node.js, that allows programm to interact with the computer's filesystem.
+--Its primary use is to perform essential file and diectory Operations such as reading writing creating deleting and monitoring files. 
+
+Synchronous Method :
+--Sysnchronous method block execution until the operation completes, making other process wait, which can be inefficient for I/O bound task.
+--Some common sysnchronous method :-
+     ---fs.readFileSync()
+     ---fs.appendFileSync()
+     ---fs.mkdirSync()
+     ---fs.existsSync()
+     ---fs.writeFileSync()
+     ---fs.renameSync()
+
+Asynchronous Method :
+--Asynchronous method do not block execution instead they use callbacks, promises or async-await allowing other Operations to run curently and improving for heavy I/O workload.
+--These are preffered for sckelble eye-performance  application or server
+--Some common sysnchronous method :-
+     ---fs.unlink()
+     ---fs.readFile()
+     ---fs.appendFile()
+     ---fs.exits()
+     ---fs.rename()
+
+
+HTTP Server(Hyper Text Transfer Protocol):
+--An HTTP server is programm that listens for request from clients and sends back response(like web page or data).
+--In Node.js we can easily create an HTTP server using the builtin HTTP module.
+--client or browser sends a request like URL,then server listens on a specific port no and then the server processes the request and sends back a responds like HTML, text or json
+
+http module ---> http server --->request --->response
+         
+          = request----->http server--->response
+
+Steps to create https server in Node.js :-
+Step 1: we have to import http module  either by using require() or import statement.
+
+const http=require('http')
+--The http module provides methods to create and manage servers.
+
+Step 2: create a server by using creatServer()
+
+const server = http.creatServer((req,res)=>{
+     res.writeHead(200,('Content-Type': 'test/plain'));
+     res.end("message");
+})
+
+req-> Request object which contains data from client side
+res-> Response object which is used to send data to client
+writeHead()->it is a method which is used to define the header or set the status code and content type.
+end()->it is is a method which is used to send data to client side
+
+Step 3: Listen/Start the server by using listen()
+--we need to pass a port  number as an argument to the listen() to run the server on a specific port.
+
+server.listen(3000,()=>{
+     log("Server running at http://localhost:3000")
+})
+
+--Port number can be anything in between 1024 and 65555(e.g: 3000,5000,8000)
+--Now we can open our browser and go to the URL to see the Response
+
+
+Some Important Request Properties
+req.url : the path requested by client side
+e.g : /about , /contact
+
+req.methods : it is the http method used to check request type 
+e.g: GET,POST,PUT
+
+req.headers : it contains all request headers
+e.g : {host : 'localhost.....'} 
+
+Important Response Properties :
+res.writeHead(statusCode,header): It is used to set the HTTP status code and response header.
+
+res.write(data) : It is used to send data in Chunks
+
+res.end([data]) : sends response, and it must be called
+
+
+COMMON HTTP STATUS CODE
+200 -> ok -> Request successful
+201 -> created -> Data created
+400 -> Bad Request -> Invalid Request 
+401 -> Unauthorized -> No Authentication
+403 -> Forbidden -> Access denied
+404 -> Not found -> Page Not found
+500 -> Internal server error -> server crashed
