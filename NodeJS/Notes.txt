@@ -117,7 +117,7 @@ Synchronous Method :
 
 Asynchronous Method :
 --Asynchronous method do not block execution instead they use callbacks, promises or async-await allowing other Operations to run curently and improving for heavy I/O workload.
---These are preffered for sckelble eye-performance  application or server
+--These are preffered for scalable high-performance application or server
 --Some common sysnchronous method :-
      ---fs.unlink()
      ---fs.readFile()
@@ -144,7 +144,7 @@ const http=require('http')
 Step 2: create a server by using creatServer()
 
 const server = http.creatServer((req,res)=>{
-     res.writeHead(200,('Content-Type': 'test/plain'));
+     res.writeHead(200,('Content-Type': 'text/plain'));
      res.end("message");
 })
 
@@ -168,8 +168,8 @@ Some Important Request Properties
 req.url : the path requested by client side
 e.g : /about , /contact
 
-req.methods : it is the http method used to check request type 
-e.g: GET,POST,PUT
+req.method : it is the http method used to check request type 
+e.g: GET, POST, PUT, DELETE
 
 req.headers : it contains all request headers
 e.g : {host : 'localhost.....'} 

@@ -36,6 +36,6 @@ const newFilePath = path.join(folderPath, "renamed_example.txt");
 // fs.renameSync(filePath, newFilePath);
 // console.log("File renamed successfully");
 
-//? Step-6: Delete the file
+//? Step-6: Delete the file     
 fs.unlinkSync(newFilePath);
 console.log("File deleted successfully");
