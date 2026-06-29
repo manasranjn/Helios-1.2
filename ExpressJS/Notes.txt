@@ -57,3 +57,27 @@ app.get("/",(req,res)=>{
     res.send("This is an example of response")
     console.log(req.method)
 })     
+
+Routes in Express.js:-
+--Routing defines how an applications end point respond to client requset 
+--Express.js uses method like get(), post(), put(), delete() etc to define routes according to http methods.
+--Routes consist of a path and a callback func with req and res parameters.
+--There are 2 types of routes :  normal route and parameterized route 
+ for ex:-  
+app.get("/books",(req,res)=>{
+     res.send("normal route")
+}) 
+app.get("/books/:id",(req,res)=>{
+    res.send("parameterized route")   
+})
+
+Route Parameter:
+--Route parameters are dynamic segments in the url path defined by using a single column(/books/:id),it allows capturing value directly from the url which are than accecible by using req.params in express
+  for Ex:
+  app.get("/books/:id",(req,res)=>{
+    res.send(parameterized route ${req.params.id})   
+  }) 
+
+--In express multiple parameters are allowed.
+--Route parameters are used to select a specific resource like fetching a specific user by id.
+
