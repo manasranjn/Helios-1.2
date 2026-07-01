@@ -115,3 +115,27 @@ Use of JSON in Web Development:-
 --APIs typically send and recieve data in JSON format beacuse it is a language independent and supported by most programming languages. 
 --In express res.json(data) sends a JSON response while middleware like express.json()  allows incoming json request
 --Some common use cases are sending user data,configuration or the result of database query to the client.
+
+Q.1 What is the role of a middleware?
+-It is handle req and res  between the client and server.
+
+#Middleware:-
+-It is a function or software layer that sits between the request and response cycle in web applications in framework like Express.js which enable developer to add ,modify and handle functionalities for incoming request before they reach the final route handler.
+-It acts as an intermediate between frontend and backend for communication ,requesting ,handling, logging ,security and more.
+-In simpe we can say it is a function that receives request,response and the next callback as an argument which allows executing codes and make changes to request and request respond object.
+
+//Use of Middleware:
+-Middleware is wideely used for tasks such as authentication,login,error handling,passing request body and adding custom headers.
+-Some common built in and third party Middleware are expess.json(), customlogger(), cors().
+-Middleware can be applied globally by using app.use() or to specific route by using app.get()/ app.post().
+
+#What is Next()?
+-The next() in Middleware passes control to the other Middleware function in the stack.
+-If a Middleware does not end the request respond cycle  it must call th enext() otherwise the request will hang and not be processed futher.
+
+#Types of Middleware:-
+1)Build in Middleware
+2)Third-party Middleware
+3)custom Middleware
+4)Application-level Middleware
+5)Router-level Middleware
