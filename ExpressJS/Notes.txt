@@ -139,3 +139,8 @@ Q.1 What is the role of a middleware?
 3)custom Middleware
 4)Application-level Middleware
 5)Router-level Middleware
+
+#EXPRESS ROUTER:-
+-It is a feature in express.js that allows us to create modular and mountable route handlers acting like a mini express application for specific part of API.
+-It helps us to organised routes into separates files like /users, /products, /login so large app stay clean ,reusable and easy to maintain.
+-Express.router() create a separate router project or variable that can have its own routes and Middleware similar to the main app.
