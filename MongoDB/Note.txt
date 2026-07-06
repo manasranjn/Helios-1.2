@@ -1,0 +1,87 @@
+MongoDB:-
+========
+->MongoDB is a NoSQL document database, that store data has JSON document inside collections.
+->Documents are like JSON object key value pairs and can contain nested document and arrays providing a schema-less structure.
+->The core features includes flexible schema indexing for first queries horizontal scaling, high avalaibility and aggrigation for data processing.
+->We can perform basic operations like CRUD operation that is insert,find,update,delete document.
+
+Mongoose:-
+=========
+mongoose is an object data modeling (ODM) library for nodejs used to structure and validate data when working with MongoDB.
+->it is a data supervised.
+->it create schema means structure for our data.
+->it is used to define the rules to create data models.
+->also it provides methods to interact with data.
+e.g:-find(), updateOne(), create(), findOne(), etc..
+
+Difference between MongoDB and Mongoose
+---------------------------------------
+mdb->it is a nosql document database server.
+m->it is an ODM library for nodejs.
+mdb->it stores and manage data by using queries,indexing .
+m->it is used to create data model validate and organized data while using MongoDB.
+mdb->it can run alone as a database.
+m->it can not work without MongoDB, it only helps interact with MongoDB.
+
+why using MongoDB without using mongoose riking in large app?
+->using MongoDB directly in  large app is not wrong but it is risky if we do not build strong pattern , validation ,structure and consistency that odm like mongoose will provide.
+->MongoDB is schema flexible so diiferent document in same collection can silently and off with missing fields ,wrong times or inconsistency structure.
+
+##Some common terms of MongoDB and mongoose
+(i)Database:-it is a container, group of related data in MongoDB.
+->one MongoDB server can host many databases each database contains multiple collections.
+
+(ii)Collection:-a collection is a group of document inside a database similar to a table.
+->collection are schema flexible that is document in the same collection can have different fields and structure.
+
+(iii)Document:-the basic data record in MongoDB stored in BSON (binary JSON).
+->a document is set of field value pairs like JSON object.
+
+(iv)Schema:-A schema defines the structure, data type, rules, and constraints for documents. It helps maintain data consistency.
+-MongoDB itself is schema flexible but schemas are used to keep data consistent.
+e.g:- const userSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  age: Number
+});
+
+(v)Model:-In Mongoose a model is a compiled class created from a schema. it represents a collection and provides method to create read,update,delete document 
+that follows in the schema.
+e.g:- const User = mongoose.model("User", userSchema);
+
+(vi)ODM(object data model):-A programming layer that maps application object to database document for MongoDB.
+->it provides scema, model ,validation and help us for nodejs and MongoDB.
+
+(vii)_id:-it is special field that uniqly identifies each document in a collection.
+->it is created automatically if not provided by default .
+->it is used to serch data uniqly.
+
+
+Common methods of mongoose:-
+----------------------------
+->Mongoose methods are the function provide a mongoose model and document to perform operation like CRUD validation aganist MongoDB .
+->this methods lets such interact with collection in an object oriented way instead of writing raw code.
+
+Types of mongoose methods:-
+---------------------------
+1.Static methods:-it is also called as model methods this method called on the model itself and usually operate on many document.
+e.g: user.find()
+2.Instance methods:-This is also known as document called on a specific document instance and operate on that one document.
+e.g: user.save()
+
+## Static methods:-
+(i)model.create(data):it create and save a new document.
+(ii)model.find(filter):-it read multiple document that matches a queries and returns documents.
+(iii)model.findOne(filter):-it read the first document that matches a queries.
+(iv)model.finfById(id):-it read a document by it's  _id.
+(v)model.findByIdAndUpdate(id, update):-it reads a document and update by it's id.
+(vi)model.updateOne(filter, update), model.updateMany(filter, update):-it update a matching document based on its queries.
+(vii)model.findByIdAndDelete(id):-deletes a document by it's id.
+(viii)model.deleteOne(filter), model.deleteMany(filter):-it delete matching document based on its queries.
+(ix)model.countDocuments(filter):it count the matching document
+
+## Some Instance methods:-
+(i)doc.save():it save new or modify doc and runs validation and middleware.
+(ii)doc.remove()/deleteOne():it delete a specific document inside a collection.
+(iii)doc.validate(),doc.validateSync():-it runs schema validation without saving .
+(iv)doc.toObject()/doc.toJSON():-converts a mongoose document to a palne javascript object for response
