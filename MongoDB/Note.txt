@@ -85,3 +85,6 @@ e.g: user.save()
 (ii)doc.remove()/deleteOne():it delete a specific document inside a collection.
 (iii)doc.validate(),doc.validateSync():-it runs schema validation without saving .
 (iv)doc.toObject()/doc.toJSON():-converts a mongoose document to a palne javascript object for response
+
+
+mongodb+srv://manasranjanbera:YxdG8oBG0GeAAArv@cluster0.emdme9o.mongodb.net/?appName=Cluster0
