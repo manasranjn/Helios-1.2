@@ -27,7 +27,6 @@ exports.getCart = async (req, res) => {
 */
 exports.addToCart = async (req, res) => {
     try {
-
         const { bookId, quantity } = req.body;
 
         let cart = await Cart.findOne({ userId: req.user.id });
