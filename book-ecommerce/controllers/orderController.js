@@ -23,8 +23,7 @@ exports.placeOrder = async (req, res) => {
         }));
 
         const totalPrice = orderItems.reduce(
-            (acc, item) => acc + item.price * item.quantity,
-            0
+            (acc, item) => acc + item.price * item.quantity, 0
         );
 
         const order = await Order.create({
@@ -62,6 +61,14 @@ exports.getUserOrders = async (req, res) => {
         const orders = await Order.find({ userId: req.user.id })
             .populate("items.bookId", "title price image")
             .sort({ createdAt: -1 }); //latest first
+
+        if (!orders) {
+            res.status(404).json({
+                success: false,
+                message: "Rrder not found",
+                error: error.message
+            });
+        }
 
         res.status(200).json({
             success: true,
@@ -103,10 +110,8 @@ exports.getAllOrders = async (req, res) => {
 /**
  ADMIN UPDATE ORDER STATUS
 */
-
 exports.updateOrderStatus = async (req, res) => {
     try {
-
         const order = await Order.findByIdAndUpdate(
             req.params.id,
             { status: req.body.status },
